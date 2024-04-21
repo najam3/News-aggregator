@@ -27,7 +27,7 @@ const Filters = () => {
     const [showIndex, setShowIndex] = useState();
     const [results, setResults] = useState([]);
     const context = useContext(NewsContext);
-    const { setData, setIsLoading } = context;
+    const { setData, setIsLoading, openFilter, setOpenFilter } = context;
 
     const addAuthor = (e) => {
         setAuthors((prev) => {
@@ -94,10 +94,10 @@ const Filters = () => {
         }
     }, [myCategory, mySource, myAuthor])
 
-
+    console.log(openFilter)
 
     return (
-        <div className='filters border shadow flex-1 max-w-[300px] min-h-[91vh]'>
+        <div className={`filters ${openFilter ? 'fixed inset-0 bg-white z-50 block w-full bg-white' : 'hidden' }  md:block sm:max-w-[300px] border shadow flex-1 sm:min-h-[91vh]`}>
             <div className='py-4  flex items-center ps-5 pe-2 border-b justify-between'>
                 <div className='flex items-center gap-2'>
                     <span>
@@ -106,7 +106,7 @@ const Filters = () => {
                     <h2 className='font-medium'>Filters</h2>
                 </div>
 
-                <div>
+                <div className='cursor-pointer' onClick={() => setOpenFilter(false)}>
                     <span>
                         <RiCloseFill size={20} />
                     </span>
