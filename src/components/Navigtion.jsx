@@ -20,6 +20,13 @@ const Navigation = () => {
         setSearch(val);
     }
 
+
+
+
+
+
+    
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!search || !from || !to) return;

@@ -25,7 +25,6 @@ const NewsProvider = ({ children }) => {
     const [to, setToGlobal] = useState(initialState.to);
 
     useEffect(() => {
-        
         let endpoint = `https://newsapi.org/v2/everything?q=${search}&from=${from}&to=${to}&sortBy=popularity&apiKey=${apiKey}`
         if(search) {
                 axios.get(endpoint)

@@ -40,6 +40,7 @@ const Home = () => {
     };
 
 
+ 
     useEffect(() => {
         const topHeadLines = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`
         axios.get(topHeadLines)
